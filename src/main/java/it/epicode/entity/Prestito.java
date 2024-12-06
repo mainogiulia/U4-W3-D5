@@ -3,7 +3,7 @@ package it.epicode.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Entity
@@ -23,11 +23,11 @@ public class Prestito {
     private Pubblicazione pubblicazione;
 
     @Column(name = "data_inizio_prestito")
-    private LocalDate dataInizioPrestito;
+    private Date dataInizioPrestito;
 
     @Column(name = "data_restituzione_prevista")
-    private LocalDate dataRestituzionePrevista;
+    private Date dataRestituzionePrevista;
 
     @Column(name = "data_restituzione_effettiva")
-    private LocalDate dataRestituzioneEffettiva;
+    private Date dataRestituzioneEffettiva;
 }

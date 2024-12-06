@@ -3,8 +3,8 @@ package it.epicode.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -24,7 +24,7 @@ public class Utente {
     private String cognome;
 
     @Column(name = "data_nascita")
-    private LocalDate dataNascita;
+    private Date dataNascita;
 
     @Column(name = "numero_tessera")
     private String numeroTessera;
