@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class MainCreate {
      public static void main(String[] args) {
           Faker faker = new Faker(new Locale("it"));
           EntityManagerFactory emf = Persistence.createEntityManagerFactory("unit-jpa");

@@ -8,7 +8,6 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "libri")
-@NamedQuery(name = "trovaLibri", query = "SELECT a FROM Libro a")
 
 public class Libro extends Pubblicazione {
     private String autore;

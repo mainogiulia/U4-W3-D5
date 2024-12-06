@@ -40,8 +40,4 @@ public class RivistaDAO {
         }
         em.getTransaction().commit();
     }
-
-    public List<Rivista> trovaRiviste(){
-        return this.em.createNamedQuery("trovaRiviste", Rivista.class).getResultList();
-    }
 }

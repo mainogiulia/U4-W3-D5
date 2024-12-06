@@ -40,8 +40,4 @@ public class LibroDAO {
         }
         em.getTransaction().commit();
     }
-
-    public List<Libro> trovaLibri(){
-        return this.em.createNamedQuery("trovaLibri", Libro.class).getResultList();
-    }
 }

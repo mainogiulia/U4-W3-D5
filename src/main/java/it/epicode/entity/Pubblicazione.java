@@ -7,7 +7,6 @@ import lombok.Data;
 @Entity
 @Table(name = "pubblicazioni")
 @Inheritance(strategy = InheritanceType.JOINED)
-@NamedQuery(name = "trovaPubblicazioni", query = "SELECT a FROM Pubblicazione a")
 
 public class Pubblicazione {
     @Id
