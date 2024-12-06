@@ -7,6 +7,9 @@ import lombok.Data;
 @Entity
 @Table(name = "pubblicazioni")
 @Inheritance(strategy = InheritanceType.JOINED)
+@NamedQuery(name = "trovaPerISBN", query = "SELECT a FROM Pubblicazione WHERE a.isbn = :isbn")
+@NamedQuery(name = "trovaPerAnno", query = "SELECT a FROM Pubblicazione WHERE a.annoPubblicazione = :annoPubblicazione")
+@NamedQuery(name = "trovaPerTitolo", query = "SELECT a FROM Pubblicazione WHERE a.titolo LIKE :titolo OR a.title LIKE ('%', :titolo, '%')")
 
 public class Pubblicazione {
     @Id

@@ -1,6 +1,7 @@
 package it.epicode.dao;
 
 import it.epicode.entity.Libro;
+import it.epicode.entity.Pubblicazione;
 import jakarta.persistence.EntityManager;
 import lombok.AllArgsConstructor;
 
@@ -19,6 +20,10 @@ public class LibroDAO {
 
     public Libro libroPerId(Long id) {
         return em.find(Libro.class, id);
+    }
+
+    public Libro libroPerAutore(String autore) {
+        return (Libro) em.createNamedQuery("trovaPerAutore", Libro.class).getResultList();
     }
 
     public void updateLibro(Libro libro) {

@@ -21,6 +21,18 @@ public class PubblicazioneDAO {
         return em.find(Pubblicazione.class, id);
     }
 
+    public Pubblicazione pubblicazionePerISBN(String isbn) {
+        return (Pubblicazione) em.createNamedQuery("trovaPerISBN", Pubblicazione.class).getResultList();
+    }
+
+    public Pubblicazione pubblicazionePerAnno(Integer annoPubblicazione) {
+        return (Pubblicazione) em.createNamedQuery("trovaPerAnno", Pubblicazione.class).getResultList();
+    }
+
+    public Pubblicazione pubblicazionePerTitolo(String titolo) {
+        return (Pubblicazione) em.createNamedQuery("trovaPerTitolo", Pubblicazione.class).getResultList();
+    }
+
     public void updatePubblicazione(Pubblicazione pubblicazione) {
         em.getTransaction().begin();
         em.merge(pubblicazione);
@@ -28,6 +40,13 @@ public class PubblicazioneDAO {
     }
 
     public void deletePubblicazione(Pubblicazione pubblicazione) {
+        em.getTransaction().begin();
+        em.remove(pubblicazione);
+        em.getTransaction().commit();
+    }
+
+    public void deletePubblicazionePerISBN(String isbn) {
+        Pubblicazione pubblicazione = pubblicazionePerISBN(isbn);
         em.getTransaction().begin();
         em.remove(pubblicazione);
         em.getTransaction().commit();

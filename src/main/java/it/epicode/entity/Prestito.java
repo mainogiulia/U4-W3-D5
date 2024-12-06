@@ -8,7 +8,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "prestiti")
-@NamedQuery(name = "trovaPrestiti", query = "SELECT a FROM Prestito a")
+@NamedQuery(name = "trovaPrestitiScaduti", query = "SELECT a FROM Prestito a WHERE a.dataRestituzionePrevista < :data AND dataRestituzioneEffettiva IS NULL")
 
 public class Prestito {
     @Id

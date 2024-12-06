@@ -3,6 +3,7 @@ package it.epicode.dao;
 import it.epicode.entity.Prestito;
 import jakarta.persistence.EntityManager;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class PrestitoDAO {
@@ -39,7 +40,7 @@ public class PrestitoDAO {
         em.getTransaction().commit();
     }
 
-    public List<Prestito> trovaPrestiti(){
-        return this.em.createNamedQuery("trovaPrestiti", Prestito.class).getResultList();
+    public List<Prestito> trovaPrestiti(LocalDate data){
+        return this.em.createNamedQuery("trovaPrestitiScaduti", Prestito.class).getResultList();
     }
 }
